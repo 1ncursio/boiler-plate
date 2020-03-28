@@ -6,16 +6,16 @@ const userSchema = mongoose.Schema({
     maxlength: 50
   },
   email: {
-    type: string,
+    type: String,
     trim: true,
     unique: 1
   },
   password: {
-    type: string,
+    type: String,
     minlength: 5
   },
   lastname: {
-    type: string,
+    type: String,
     maxlength: 50
   },
   role: {
