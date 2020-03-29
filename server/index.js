@@ -26,9 +26,7 @@ mongoose
 
 app.get('/', (req, res) => res.send('Hello Express'));
 
-app.get('/api/hello', (req, res) => {
-  res.send('안녕하세요');
-});
+app.get('/api/hello', (req, res) => {});
 
 app.post('/api/users/register', (req, res) => {
   //회원 가입 할 때 필요한 정보들을 client에서 가져오면
@@ -76,7 +74,7 @@ app.get('/api/users/auth', auth, (req, res) => {
     _id: req.user._id,
     isAdmin: req.user.role === 0 ? false : true,
     isAuth: true,
-    email: user.email,
+    email: req.user.email,
     name: req.user.name,
     lastname: req.user.lastname,
     role: req.user.role,
